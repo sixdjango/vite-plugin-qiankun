@@ -1,0 +1,27 @@
+{
+  "microName": "viteapp",
+  "activeRule": "/vite",
+  "entry": "//localhost:3201",
+  "container": "#viteapp",
+  "routes": [
+    {
+      "order": 80,
+      "menuTitle": "企业管理",
+      "path": "/",
+      "routeName": "Enterprise",
+      "redirect": "/",
+      "meta": { "inMenu": true, "icon": "pingtaiQ_qiyeguanli" },
+      "children": [
+        { "order": 0, "menuTitle": "新增企业", "path": "/add", "routeName": "AddCompany", "meta": { "title": "新增企业", "noCache": true } },
+        { "order": 1, "menuTitle": "企业维护", "path": "/maintenance", "routeName": "Maintenance", "meta": { "title": "企业维护", "permissionCode": "company:enterprise" } },
+        {
+          "order": 2,
+          "menuTitle": "编辑",
+          "path": "/edit",
+          "routeName": "EditCompany",
+          "meta": { "inMenu": false, "permissionCode": "company:enterprise", "hideTab": true, "noCache": true, "currentActiveMenu": "/enterprise/maintenance" }
+        }
+      ]
+    }
+  ]
+}

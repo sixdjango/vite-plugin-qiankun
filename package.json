@@ -1,0 +1,54 @@
+{
+  "name": "vite-plugin-qiankun",
+  "version": "1.0.9",
+  "description": "vite for qiankun",
+  "module": "es/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c scripts/rollup.config.js",
+    "example:install": "cd example/main && npm install && cd ../viteapp && npm install && cd ../vue && npm install",
+    "example:start": "npm run build && cd example/viteapp && npm run build && cd ../../ && npm-run-all --parallel start:main start:viteapp start:vue",
+    "example:start-vite-dev": "npm run build && npm-run-all --parallel start:main start:vitedev start:vue",
+    "start:main": "cd example/main && npm run start",
+    "start:viteapp": "cd example/viteapp && npm run start",
+    "start:vitedev": "cd example/viteapp && npm run dev",
+    "start:vue": "cd example/vue && npm run start",
+    "vite:test": "npm run build && cd example/viteapp && npm run dev"
+  },
+  "keywords": [
+    "qiankun",
+    "vite",
+    "esm",
+    "esModule"
+  ],
+  "files": [
+    "dist",
+    "es"
+  ],
+  "homepage": "https://github.com/tengmaoqing/vite-plugin-qiankun",
+  "author": "markteng",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^16.2.10",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "npm-run-all": "^4.1.5",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup": "^2.57.0",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.1"
+  },
+  "peerDependencies": {
+    "typescript": ">=4",
+    "vite": ">=2"
+  }
+}

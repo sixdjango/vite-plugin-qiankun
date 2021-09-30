@@ -1,0 +1,8 @@
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bda {
+  border: 1px solid #e2e5e9;
+}
